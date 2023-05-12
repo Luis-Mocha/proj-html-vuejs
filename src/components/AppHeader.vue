@@ -2,6 +2,7 @@
 
     export default {
         name: 'AppHeader',
+        props: ["infoNav"],
     }
 
 </script>
@@ -10,25 +11,19 @@
 <template>
 
     <header>
-        <div class="container d-flex justify-content-between">
-            <a href="#">
+        <div class="container d-flex flex-wrap justify-content-between">
+
+            <a href="#" class="header-logo">
                 <img src="/img/logo.png" alt="Logo Avada">
             </a>
+            
             <nav class="navbar navbar-expand-md">
-                <!-- Bottone per aprire il menu -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
                 <!-- menu -->
                 <div class="collapse navbar-collapse" id="nav-menu">
 
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" v-for="(elem, index) in infoNav" :key="index">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="me-3" aria-current="page" :href="elem">{{elem}}</a>
                         </li>
                     </ul>
 
@@ -40,6 +35,12 @@
                     </div>
 
                 </div>
+
+                <!-- Bottone per aprire il menu -->
+                <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
             </nav>
 
         </div>
@@ -50,22 +51,40 @@
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
 @import "../style/main.scss";
-// @import "@fontsource/fira-sans.css";
 
 
     header {
         background-color: $blue-estern;
-        // height: 100px;
         padding: 10px 0;
 
-        .header-input {
-            margin-left: 20px;
+        .header-logo {
+            margin: 15px;
+        }
 
-            input {
-                width: 100px;
+
+        .navbar {
+            padding: 0;
+
+            li {
+                a {
+                color: white;
+                text-transform: capitalize;
+                line-height: 2;
+                }
+            }
+
+            .header-input {
+
+                input {
+                    width: 120px;
+                }
             }
         }
+        
     }
+
+    
+    
 
 
 </style>

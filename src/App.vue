@@ -23,7 +23,7 @@ export default {
 
 <template>
 
-  <AppHeader/>
+  <AppHeader :infoNav="store.navList" />
 
   <AppMain/>
 
