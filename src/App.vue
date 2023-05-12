@@ -1,21 +1,31 @@
 <script>
-import HeaderComp from './components/HeaderComp.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   name: 'app',
   components: {
-    HeaderComp,
+    AppHeader,
+    AppMain,
+    AppFooter,
   },
 }
 
 </script>
 
 <template>
+  <h1>prova</h1>
 
-  <h1 class="text-center text-success">Ciao Mondo!</h1>
+  <AppHeader/>
+
+  <AppMain/>
+
+  <AppFooter/>
 
 </template>
 
 <style lang="scss">
-@use './style/main.scss';
+@import "./style/main.scss";
+
 </style>
