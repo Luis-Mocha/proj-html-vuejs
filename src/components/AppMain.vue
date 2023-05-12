@@ -9,7 +9,7 @@
 
 <template>
 
-    <h2>AppMain</h2>
+    <h2>TECH FORUMS</h2>
 
 </template>
 
