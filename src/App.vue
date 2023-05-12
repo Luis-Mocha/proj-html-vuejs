@@ -16,13 +16,12 @@ export default {
       store
     }
   },
-  
+
 }
 
 </script>
 
 <template>
-  <h1>prova</h1>
 
   <AppHeader/>
 
