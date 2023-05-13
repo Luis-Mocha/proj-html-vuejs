@@ -46,6 +46,7 @@ body {
 
     .main-name {
         text-align: center;
+        padding: 20px 0;
 
         p {
             text-transform: uppercase;
@@ -59,10 +60,10 @@ body {
         }
         
         hr {
-            margin: 20px auto;
+            margin: 20px auto 0;
             width: 100px;
             border: 2px solid $salmon;
         }
     }
-    
+
 }
