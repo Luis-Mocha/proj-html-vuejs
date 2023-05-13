@@ -11,7 +11,6 @@
 
     <div id="jumbo">
         <div class="container">
-            <!-- <img src="img/home_slider_bg.jpg" alt=""> -->
             <h1>
                 Tech Forum!
             </h1>
@@ -28,9 +27,24 @@
         </div>
     </div>
 
+    <div id="presentation">
+        <p class="presentation-title">
+            Avada forum is the place to be
+        </p>
+
+        <p class="presentation-body">
+            In quis lectus sed leo elementum faucibus in dapibus dictum.
+            <br>
+            Nulla Molestie tortor nec lectus venenatis, sed blandit dui finibus.
+            <br>
+            Dolor, at bipendum. Donec vehicula nec tortor ac finibus.
+        </p>
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
+@use '../style/partials/variables' as *;
 @import "../style/main.scss";
 
     #jumbo {
@@ -51,5 +65,27 @@
             }
         }
     }
+
+    #presentation {
+        background-color: rgb(242,242,242); //non ho trovato questo colore nel "color-palette"
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .presentation-title {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: small;
+            letter-spacing: 3px;
+        }
+
+        .presentation-body {
+            text-align: center;
+            color: gray;
+        }
+    }
+
 
 </style>
