@@ -60,8 +60,6 @@
     header {
         background-color: $blue-estern;
         padding: 10px 0;
-
-
         .navbar {
             padding: 0;
 
