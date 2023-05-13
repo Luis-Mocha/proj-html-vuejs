@@ -45,7 +45,7 @@
         <div class="container">
 
             <div class="main-name">
-                <p>
+                <p class="letter-space-upper">
                     Phasellus eget metus
                 </p>
 
@@ -90,10 +90,10 @@
                     </div>
                 </div>
 
-                <div id="featured-article">
+                <div id="featured-1" class="featured-article">
                     <div class="container-featured">
 
-                        <span>Featured Article</span>
+                        <p class="letter-space-upper">Featured Article</p>
 
                         <h3>
                             Cras Malesuada et orci eget pharetra
@@ -104,7 +104,9 @@
                         </p>
 
                         <div class="my-btn btn-black">
-                            Read more  >
+                            <a href="#">
+                                Read more <span class="ms-2">></span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -141,16 +143,83 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="news-tutorial" class="d-lg-flex  align-items-center">
+
+                    <div id="featured-2" class="featured-article col-lg-8">
+                        <div class="container-featured">
+                            <p class="letter-space-upper">Rewied Article</p>
+
+                            <h3>
+                                Mauris viverra atisan ipsum eget felis prims effictur varius
+                            </h3>
+
+                            <p>
+                                In quis lectus sed leo elemntum faucibus in dapibus dictum. Nulla molestie tortor nec lectus venenatis,sed blandit dui, dolor at bibendum sadips ets ipsum dolores ficilis uns leo lectus.
+                            </p>
+
+                            <div class="my-btn btn-black">
+                                <a href="#">
+                                    Read more <span class="ms-2">></span>
+                                </a>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <div class="tutorials">
+                        <h4>
+                            Tutorial & Guides
+                        </h4>
+
+                        <hr class="hr-salmon"> 
+
+                        <!-- tutorial 1 -->
+                        <div class="tutorial-card">
+                            <img src="img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
+
+                            <div class="tutorial-card-body">
+                                <div>
+                                    Donec ornare Pretium eget scetisque justo 
+                                </div>
+                                <span>
+                                    October 11th,2015 | Comments Off
+                                </span>
+                            </div>
+                        </div>
+                        <!-- tutorial 2 -->
+                        <div class="tutorial-card">
+                            <img src="img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
+
+                            <div class="tutorial-card-body">
+                                <div>
+                                    Fusce sollicitudin nunc sed placerat varius
+                                </div>
+                                <span>
+                                    October 11th,2015 | Comments Off
+                                </span>
+                            </div>
+                        </div>
+                        <!-- tutorial  -->
+                        <div class="tutorial-card">
+                            <img src="img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
+
+                            <div class="tutorial-card-body">
+                                <div>
+                                    Proin eu purus sed aru aliquet curabir vens
+                                </div>
+                                <span>
+                                    October 11th,2015 | Comments Off
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
         </div>
     </div>
-        <!-- http://newsapi.org/v2/top-headlines?q=iphone&country=it&category=technology&language=it&pageSize=10&apiKey= -->
-
-        <!-- https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=4396876dd597418790439730f9024c47 -->
-        <!-- https://newsapi.org/v2/top-headlines?q=mac&category=technology&apiKey=4396876dd597418790439730f9024c47 -->
-
-        <!-- https://newsapi.org/v2/everything?q=tech&pageSize=20&language=it&apiKey=4396876dd597418790439730f9024c47 -->
 
 </template>
 
@@ -213,18 +282,74 @@
         }
     }
 
-    #featured-article {
-        color: white;
-        height: 300px;
+    #featured-1 {
         background-image: url("img/featured_article_1_bg.jpg");
+        height: 350px;
+    }
+
+    #featured-2 {
+        background-image: url("img/featured_article_2_bg.jpg");
+        height: 300px;
+        overflow: hidden;
+        margin: 0;
+        // width: 60%;
+    }
+
+    .featured-article {
+        margin: 15px 0;
+        color: white;
         background-size: cover;
-        padding: 10%;
+        padding: 0 50px;
         display: flex;
         align-items: center;
 
         .container-featured{
-            
+            h3 {
+                font-weight: 800;
+            }
         }
     }
+
+    #news-turorials{
+        height: 300px;
+    }
+
+    .tutorials {
+        // width: 40%;
+        padding-left: 20px;
+        margin-top: 10px;
+
+        h4 {
+            font-weight: 800;
+            margin: 0;
+        }
+
+        hr {
+            margin: 15px 0;
+        }
+        .tutorial-card {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-top: 5px;
+
+            img {
+                width: 100px;
+                cursor: pointer;
+            }
+            .tutorial-card-body {
+                margin-left: 10px;
+
+                div {
+                    font-weight: 600;
+                }
+                span {
+                    color: gray;
+                    font-size: 12px;
+                }
+            }
+        }
+
+    }
+    
 
 </style>
