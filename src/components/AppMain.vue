@@ -53,7 +53,7 @@
         background-size: cover;
 
         .container {
-            height: 400px;
+            height: 450px;
             display: flex;
             flex-direction: column;
             align-items: start;
