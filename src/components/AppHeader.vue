@@ -13,7 +13,7 @@
     <header>
         <div class="container d-flex flex-wrap justify-content-between">
 
-            <a href="#" class="header-logo">
+            <a href="#" class="header-logo d-flex align-items-center">
                 <img src="/img/logo.png" alt="Logo Avada">
             </a>
             
@@ -27,9 +27,13 @@
                         </li>
                     </ul>
 
-                    <div class="header-input d-flex" role="search">
-                        <input class="" type="search" placeholder="Search" aria-label="Search">
-                        <button class="">
+                    <div class=" me-3 my-1 my-btn btn-black">
+                        Join us
+                    </div>
+
+                    <div class="header-input d-flex my-1" role="search">
+                        <input type="search" placeholder="Search" aria-label="Search">
+                        <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
@@ -56,10 +60,6 @@
     header {
         background-color: $blue-estern;
         padding: 10px 0;
-
-        .header-logo {
-            margin: 15px;
-        }
 
 
         .navbar {

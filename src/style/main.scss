@@ -26,3 +26,16 @@ a {
 body {
     font-family: 'Fira Sans', sans-serif;
 }
+
+// --- UTILITY
+.my-btn {
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-black {
+    background-color: black;
+}
