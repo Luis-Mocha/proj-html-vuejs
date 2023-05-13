@@ -8,10 +8,6 @@
     padding: 0;
 }
 
-h1, h2 , h3 ,h4, h5, h6 {
-    margin: 0;
-}
-
 ul {
     list-style: none;
     padding: 0;
@@ -42,4 +38,31 @@ body {
 }
 .btn-blue {
     background-color: $blue-estern ;
+}
+
+// --- MAIN SECTIONS ---
+.main-section {
+    padding-top: 50px;
+
+    .main-name {
+        text-align: center;
+
+        p {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            font-size: small;
+        }
+
+        h2 {
+            font-weight:800;
+        }
+        
+        hr {
+            margin: 20px auto;
+            width: 100px;
+            border: 2px solid $salmon;
+        }
+    }
+    
 }

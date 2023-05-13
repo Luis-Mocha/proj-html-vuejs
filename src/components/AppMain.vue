@@ -41,6 +41,21 @@
         </p>
     </div>
 
+    <div class="main-section container">
+        <div class="main-name">
+            <p>
+                Phasellus eget metus
+            </p>
+
+            <h2>
+                All the latest news
+            </h2>
+
+            <hr>
+        </div>
+
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
