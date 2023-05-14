@@ -270,6 +270,29 @@ import CardForum from './CardForum.vue';
         </div>
     </div>
 
+    <div id="join-section" class="main-section">
+        <div id="jumbo-community">
+            <div>
+                <h2>
+                    Hey! Join to our Community
+                </h2>
+
+                <p>
+                    Nulla molestie tortor nec lectus venenatis, sed blandit dui finibus. Curabitur feugiat vulputate purus ipsums dolores ficilis uns etra.
+                </p>
+
+                <div class="my-btn btn-blue">
+                    <a href="">
+                        Sign up <span class="ms-2">></span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -298,7 +321,7 @@ import CardForum from './CardForum.vue';
     }
 
     #presentation {
-        background-color: rgb(242,242,242); //non ho trovato questo colore nel "color-palette"
+        background-color: $grey-bg; //non ho trovato questo colore nel "color-palette"
         height: 200px;
         display: flex;
         flex-direction: column;
@@ -319,8 +342,7 @@ import CardForum from './CardForum.vue';
     }
 
     #forum-section {
-
-        background-color: rgb(242,242,242);
+        background-color: $grey-bg;
         .card-forum-container {
         display: flex;
         flex-wrap: wrap;
@@ -328,6 +350,33 @@ import CardForum from './CardForum.vue';
         gap: 40px;
         padding: 20px 0;
     }
+    }
+
+    #join-section {
+        padding: 0;
+        #jumbo-community {
+            height: 400px;
+            background-image: url(img/join_now_cta_bg.jpg);
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
+            div {
+                width: 60%;
+                h2 {
+                    font-weight: 800;
+                    font-size: 40px;
+                    margin-bottom: 10px;
+                }
+
+                
+            }
+        }
     }
     
 
