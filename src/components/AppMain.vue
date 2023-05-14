@@ -291,6 +291,19 @@ import CardForum from './CardForum.vue';
 
         </div>
 
+        <div id="newsletter">
+            <div id="newsletter-title">
+                Subscribe to our NewsLetter
+            </div>
+
+            <form action="#">
+                <input type="email" name="newsletter-input" id="newsletter-input" placeholder="*Insert your email" class="">
+                <button type="submit" class="my-btn btn-black">
+                    Send
+                </button>
+            </form>
+        </div>
+
     </div>
 
 </template>
@@ -376,6 +389,45 @@ import CardForum from './CardForum.vue';
 
                 
             }
+        }
+
+        #newsletter {
+            background-color: $grey-bg;
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #newsletter-title {
+                font-size: 30px;
+                font-weight: 400;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            form {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center ;
+
+                #newsletter-input {
+                    padding: 4px 6px;
+                    margin-right: 20px;
+                    margin-bottom: 20px;
+                    width: 500px;
+                    border-radius: 0;
+                    border: 1px ridge grey;
+            
+                }
+
+                button {
+                    margin-bottom: 20px;
+                    width: 200px;
+                }
+            }
+
         }
     }
     
