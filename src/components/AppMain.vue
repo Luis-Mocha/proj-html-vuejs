@@ -418,7 +418,7 @@ import CardForum from './CardForum.vue';
                     margin-bottom: 20px;
                     width: 500px;
                     border-radius: 0;
-                    border: 1px ridge grey;
+                    border: 1px ridge rgb(175, 170, 170);
             
                 }
 
