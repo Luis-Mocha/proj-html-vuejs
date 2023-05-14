@@ -199,7 +199,7 @@
                                 </span>
                             </div>
                         </div>
-                        <!-- tutorial  -->
+                        <!-- tutorial 3 -->
                         <div class="tutorial-card">
                             <img src="img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
 
@@ -225,7 +225,9 @@
 
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
+@import "../style/section-news.scss"; // se lo inserisco per ultimo non funziona
 @import "../style/main.scss";
+
 
     #jumbo {
         color: white;
@@ -268,88 +270,7 @@
     }
 
     // --- SEZIONE NEWS
-    .news-row {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 0;
-
-        .news-card {
-            width: calc(100% / 3 - 20px);
-
-            img {
-                width: 100%;
-            }
-        }
-    }
-
-    #featured-1 {
-        background-image: url("img/featured_article_1_bg.jpg");
-        height: 350px;
-    }
-
-    #featured-2 {
-        background-image: url("img/featured_article_2_bg.jpg");
-        height: 300px;
-        overflow: hidden;
-        margin: 0;
-        // width: 60%;
-    }
-
-    .featured-article {
-        margin: 15px 0;
-        color: white;
-        background-size: cover;
-        padding: 0 50px;
-        display: flex;
-        align-items: center;
-
-        .container-featured{
-            h3 {
-                font-weight: 800;
-            }
-        }
-    }
-
-    #news-turorials{
-        height: 300px;
-    }
-
-    .tutorials {
-        // width: 40%;
-        padding-left: 20px;
-        margin-top: 10px;
-
-        h4 {
-            font-weight: 800;
-            margin: 0;
-        }
-
-        hr {
-            margin: 15px 0;
-        }
-        .tutorial-card {
-            display: flex;
-            flex-wrap: nowrap;
-            margin-top: 5px;
-
-            img {
-                width: 100px;
-                cursor: pointer;
-            }
-            .tutorial-card-body {
-                margin-left: 10px;
-
-                div {
-                    font-weight: 600;
-                }
-                span {
-                    color: gray;
-                    font-size: 12px;
-                }
-            }
-        }
-
-    }
+    
     
 
 </style>
