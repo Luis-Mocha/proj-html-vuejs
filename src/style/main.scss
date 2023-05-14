@@ -54,6 +54,8 @@ body {
 }
 
 // --- MAIN SECTIONS ---
+// Le main-sections sono struttrate in main-name, main-body e main-end.
+// Main-end si colloca all'esterno del div .container
 .main-section {
     padding-top: 50px;
 
@@ -69,6 +71,21 @@ body {
             margin: 20px auto 0;
             width: 100px;
             border: 2px solid $salmon;
+        }
+    }
+
+    .main-end {
+        background-color: $shark-black;
+        color: white;
+        margin-top: 40px;
+        padding: 40px 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        
+        i {
+            margin-left: 5px;
         }
     }
 

@@ -217,7 +217,12 @@
 
                 </div>
             </div>
+        </div>
 
+        <div class="main-end">
+            <a href="#">
+                Read our blog <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
         </div>
     </div>
 
@@ -225,7 +230,7 @@
 
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
-@import "../style/section-news.scss"; // se lo inserisco per ultimo non funziona
+@import "../style/section-news.scss"; // SEZIONE NEWS (se lo inserisco per ultimo non funziona)
 @import "../style/main.scss";
 
 
@@ -268,8 +273,6 @@
             color: gray;
         }
     }
-
-    // --- SEZIONE NEWS
     
     
 
