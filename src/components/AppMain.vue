@@ -255,7 +255,7 @@ import CardForum from './CardForum.vue';
             </div>
 
             <div class="main-body">
-                <div>
+                <div class="card-forum-container">
                     <CardForum v-for="(elem, index) in store.infoForum" :key="index" :info="elem"/>
                 </div>
                 
@@ -317,7 +317,18 @@ import CardForum from './CardForum.vue';
             color: gray;
         }
     }
-    
+
+    #forum-section {
+
+        background-color: rgb(242,242,242);
+        .card-forum-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px 0;
+    }
+    }
     
 
 </style>
