@@ -17,6 +17,40 @@ export const store = reactive (
                 title: 'Latest Replies',
                 list_item: ['Cras lacinia teellus id mauris finibus lacus molestie' , 'Cras lacinia teellus id mauris finibus lacus molestie' , 'Nulla egestas nulla eu nulla suscipit molestie' , 'Mauribus ac nibh quis eros sagittis lacinia a et dui' ]
             }
+        ],
+        forumInfo: [
+            {
+                title: 'News & Community',
+                iconClass: 'fa-regular fa-file-lines'
+            },
+            {
+                title: 'Apple Forum',
+                iconClass: 'fa-brands fa-apple'
+            },
+            {
+                title: 'Microsoft Forum',
+                iconClass: 'fa-brands fa-windows'
+            },
+            {
+                title: 'Android Forum',
+                iconClass: 'fa-brands fa-android'
+            },
+            {
+                title: 'General Discussion',
+                iconClass: 'fa-solid fa-mug-saucer'
+            },
+            {
+                title: 'Apps & Software',
+                iconClass: 'fa-solid fa-cubes'
+            },
+            {
+                title: 'Gadget & Stuff',
+                iconClass: 'fa-solid fa-laptop'
+            },
+            {
+                title: 'Tutorials & Guides',
+                iconClass: 'fa solid fa-wrench'
+            },
         ]
 
     }
