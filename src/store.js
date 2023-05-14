@@ -18,7 +18,7 @@ export const store = reactive (
                 list_item: ['Cras lacinia teellus id mauris finibus lacus molestie' , 'Cras lacinia teellus id mauris finibus lacus molestie' , 'Nulla egestas nulla eu nulla suscipit molestie' , 'Mauribus ac nibh quis eros sagittis lacinia a et dui' ]
             }
         ],
-        forumInfo: [
+        infoForum: [
             {
                 title: 'News & Community',
                 iconClass: 'fa-regular fa-file-lines'

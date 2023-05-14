@@ -1,7 +1,20 @@
 <script>
+import { store } from '../store';
+import CardForum from './CardForum.vue';
 
     export default {
         name: 'AppMain',
+        components: {
+            CardForum,
+        },
+        data() {
+            return {
+                store
+            }
+        },
+        created() {
+            console.log(store.infoForum);
+        }
     }
     
 </script>
@@ -222,6 +235,37 @@
         <div class="main-end">
             <a href="#">
                 Read our blog <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="forum-section" class="main-section">
+        <div class="container">
+
+            <div class="main-name">
+                <p class="letter-space-upper">
+                    Phasellus eget metus
+                </p>
+
+                <h2>
+                    Forum Sections
+                </h2>
+
+                <hr>
+            </div>
+
+            <div class="main-body">
+                <div>
+                    <CardForum v-for="(elem, index) in store.infoForum" :key="index" :info="elem"/>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="main-end">
+            <a href="#">
+                Go to our forum <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
     </div>
