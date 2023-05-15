@@ -413,6 +413,7 @@ import CardForum from './CardForum.vue';
                 #newsletter-input {
                     padding: 4px 6px;
                     margin-right: 20px;
+                    margin-left: 20px;
                     margin-bottom: 20px;
                     width: 500px;
                     border-radius: 0;
