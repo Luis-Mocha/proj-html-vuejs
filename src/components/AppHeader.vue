@@ -27,11 +27,11 @@
                         </li>
                     </ul>
 
-                    <div class=" me-3 my-1 my-btn btn-black">
+                    <div class="me-3 my-btn btn-black">
                         Join us
                     </div>
 
-                    <div class="header-input d-flex my-1" role="search">
+                    <div class="header-input d-flex" role="search">
                         <input type="search" placeholder="Search" aria-label="Search">
                         <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -41,7 +41,7 @@
                 </div>
 
                 <!-- Bottone per aprire il menu -->
-                <button class="navbar-toggler m-2" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -71,7 +71,7 @@
             }
 
             .header-input {
-
+                margin: 12px 0;
                 input {
                     width: 120px;
                 }

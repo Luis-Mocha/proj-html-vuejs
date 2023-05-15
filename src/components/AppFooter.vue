@@ -9,7 +9,6 @@
 
 
 <template>
-
     <footer>
 
         <!-- menus footer -->
@@ -75,8 +74,8 @@
                 </div>
             </div>
         </div>
-    </footer>
 
+    </footer>
 </template>
 
 <style lang="scss" scoped>
@@ -104,7 +103,14 @@
                 font-weight: 600;
                 border-bottom: 1px solid $silver;
                 display: flex; 
-                align-items: center; 
+                align-items: center;
+
+                &:hover {
+                    border-bottom: 1px solid $salmon;
+                    span {
+                        color: $salmon;
+                    }
+                }
                 
                 span {
                     margin-right: 5px;
