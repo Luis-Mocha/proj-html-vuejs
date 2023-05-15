@@ -42,7 +42,8 @@
 
                 <!-- Bottone per aprire il menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <i class="fa-solid fa-bars"></i>
                 </button>
 
             </nav>
@@ -76,9 +77,15 @@
                     width: 120px;
                 }
             }
-        }
-        
-    }
 
+            .navbar-toggler {
+                color: white;
+                background-color: transparent;
+                border: none;
+                font-size: larger;
+                box-shadow: none;
+            }
+        } 
+    }
 </style>
 
