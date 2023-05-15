@@ -3,6 +3,24 @@
     export default {
         name: 'AppHeader',
         props: ["infoNav"],
+        data() {
+            return {
+                control: false,
+            }
+        },
+        methods: {
+            openInput() {
+                if (this.control === false) {
+                    document.getElementById('search-input').classList.add('open')
+                    document.querySelector('.search-button').classList.add('open')
+                    this.control = true
+                } else {
+                    document.getElementById('search-input').classList.remove('open')
+                    document.querySelector('.search-button').classList.remove('open')
+                    this.control= false
+                }
+            }
+        }
     }
 
 </script>
@@ -32,8 +50,8 @@
                     </div>
 
                     <div class="header-input d-flex" role="search">
-                        <input type="search" placeholder="Search" aria-label="Search">
-                        <button>
+                        <input id="search-input" type="search" placeholder="Search.." aria-label="Search">
+                        <button class="search-button" @click="openInput()">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
@@ -73,8 +91,25 @@
 
             .header-input {
                 margin: 12px 0;
-                input {
-                    width: 120px;
+                #search-input {
+                    width: 0;
+                    border-color: white;
+                }
+                #search-input.open {
+                    width: 130px;
+                    padding: 2px 5px;
+                }
+
+                .search-button {
+                    color: white;
+                    background-color: transparent;
+                    padding: 2px 5px;
+                    border: 0;
+                    
+                }
+                .search-button.open {
+                    border: 1px solid white;
+                    border-left: 0;
                 }
             }
 
