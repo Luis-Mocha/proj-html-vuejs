@@ -35,6 +35,7 @@ import { store } from '../store'
                 }
             },
 
+            // Funzione per caercare il valore input
             searchApi() {
                 if (store.searchValue != '') {
                     axios.get(`https://newsapi.org/v2/everything?q=${store.searchValue}&pageSize=20&language=it&apiKey=${import.meta.env.VITE_API_KEY}`)
