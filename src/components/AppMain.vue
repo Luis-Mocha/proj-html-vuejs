@@ -362,7 +362,7 @@ import CardForum from './CardForum.vue';
         justify-content: center;
         gap: 40px;
         padding: 20px 0;
-    }
+        }
     }
 
     #join-section {
@@ -386,8 +386,6 @@ import CardForum from './CardForum.vue';
                     font-size: 40px;
                     margin-bottom: 10px;
                 }
-
-                
             }
         }
 
@@ -427,7 +425,6 @@ import CardForum from './CardForum.vue';
                     width: 200px;
                 }
             }
-
         }
     }
     

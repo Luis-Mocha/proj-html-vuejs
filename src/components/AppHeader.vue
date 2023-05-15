@@ -56,7 +56,6 @@
 @use '../style/partials/variables' as *;
 @import "../style/main.scss";
 
-
     header {
         background-color: $blue-estern;
         padding: 10px 0;
@@ -80,10 +79,6 @@
         }
         
     }
-
-    
-    
-
 
 </style>
 
