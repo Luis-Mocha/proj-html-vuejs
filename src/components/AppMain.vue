@@ -1,10 +1,13 @@
 <script>
+import axios from 'axios';
 import { store } from '../store';
+import CardNews from './CardNews.vue'
 import CardForum from './CardForum.vue';
 
     export default {
         name: 'AppMain',
         components: {
+            CardNews,
             CardForum,
         },
         data() {
@@ -13,7 +16,18 @@ import CardForum from './CardForum.vue';
             }
         },
         created() {
-            console.log(store.infoForum);
+            this.getNewsApi()
+        },
+        methods: {
+
+            getNewsApi() {
+                axios.get(`https://newsapi.org/v2/everything?q=tech&pageSize=20&language=it&apiKey=${import.meta.env.VITE_API_KEY}`)
+                .then( (res) => {
+                console.log(res.data)
+
+                store.newsArray = res.data.articles;
+                })
+            },
         }
     }
     
@@ -71,36 +85,8 @@ import CardForum from './CardForum.vue';
 
             <div class="main-body">
                 <div class="news-row">
+                    <CardNews v-for="(elem,index) in store.newsArray.slice(0,3)" :key="index" :infoNews="elem"/>
 
-                    <div class="news-card">
-                        <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo">
-
-                        <div class="card-body">
-                            <div class="card-title">loreskjhda asuhdakjhsd uhasd</div>
-                            <div class="card-subtitle mb-2 text-body-secondary">Card subtitle</div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo">
-
-                        <div class="card-body">
-                            <div class="card-title">loreskjhda asuhdakjhsd uhasd</div>
-                            <div class="card-subtitle mb-2 text-body-secondary">Card subtitle</div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo">
-
-                        <div class="card-body">
-                            <div class="card-title">loreskjhda asuhdakjhsd uhasd</div>
-                            <div class="card-subtitle mb-2 text-body-secondary">Card subtitle</div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
                 </div>
 
                 <div id="featured-1" class="featured-article">
@@ -125,36 +111,7 @@ import CardForum from './CardForum.vue';
                 </div>
 
                 <div class="news-row">
-
-                    <div class="news-card">
-                        <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo">
-
-                        <div class="card-body">
-                            <div class="card-title">loreskjhda asuhdakjhsd uhasd</div>
-                            <div class="card-subtitle mb-2 text-body-secondary">Card subtitle</div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo">
-
-                        <div class="card-body">
-                            <div class="card-title">loreskjhda asuhdakjhsd uhasd</div>
-                            <div class="card-subtitle mb-2 text-body-secondary">Card subtitle</div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo">
-
-                        <div class="card-body">
-                            <div class="card-title">loreskjhda asuhdakjhsd uhasd</div>
-                            <div class="card-subtitle mb-2 text-body-secondary">Card subtitle</div>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
+                    <CardNews v-for="(elem,index) in store.newsArray.slice(3,6)" :key="index" :infoNews="elem"/>
                 </div>
 
                 <div id="news-tutorial" class="d-lg-flex  align-items-center">

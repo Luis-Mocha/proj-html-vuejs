@@ -2,7 +2,8 @@ import {reactive} from "vue";
 
 export const store = reactive (
     {
-        prova: 'prova prova',
+        searchValue: '',
+        newsArray: [],
         navList: ['home' , 'apple', 'microsoft', 'android', 'forums', 'contact us'],
         footerList: [
             {
