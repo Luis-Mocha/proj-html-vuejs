@@ -84,7 +84,7 @@ import CardForum from './CardForum.vue';
             </div>
 
             <div class="main-body">
-                <div class="news-row">
+                <div class="news-row justify-content-center justify-content-sm-between">
                     <CardNews v-for="(elem,index) in store.newsArray.slice(0,3)" :key="index" :infoNews="elem"/>
 
                 </div>
@@ -110,7 +110,7 @@ import CardForum from './CardForum.vue';
                     </div>
                 </div>
 
-                <div class="news-row">
+                <div class="news-row justify-content-center justify-content-sm-between">
                     <CardNews v-for="(elem,index) in store.newsArray.slice(3,6)" :key="index" :infoNews="elem"/>
                 </div>
 

@@ -23,11 +23,11 @@ export default {
             }
         },
 
-        getAuthor() {
-            if (this.infoNews.author) {
-                return this.infoNews.author
+        getSource() {
+            if (this.infoNews.source.name) {
+                return this.infoNews.source.name
             } else {
-                return 'Autore non disponibile'
+                return 'Fonte non disponibile'
             }
         },
 
@@ -45,18 +45,16 @@ export default {
 
 <template>
     <div class="news-card">
-        <!-- <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo"> -->
-        <img :src="getImage()" alt="Foto Articolo">
-
+        <a :href="infoNews.url" target="_blank">
+            <img :src="getImage()" alt="Foto Articolo">
+        </a>
 
         <div class="card-body">
             <div class="card-title">
-                <a :href="infoNews.url" target="_blank">
-                    {{ infoNews.title }}
-                </a>
+                {{ infoNews.title }}
             </div>
             <div class="card-subtitle mb-2 text-body-secondary">
-                {{ getAuthor() }}
+                {{ getSource() }}
                 <span class="ms-1">| {{ getDate() }} </span>
             </div>
             <p class="card-text">
@@ -72,7 +70,8 @@ export default {
 @import "../style/main.scss";
 
     .news-card {
-        width: calc(100% / 3 - 20px);
+        width: calc(100% / 1 - 50px);
+        margin-bottom: 10px;
 
         img {
             width: 100%;
@@ -83,16 +82,26 @@ export default {
         .card-body {
             .card-title {
                 font-weight: 600;
+                max-height: 80px;
+                overflow: hidden;
+                margin: 7px 0;
             }
             .card-subtitle , .card-text {
                 color: gray;
-                font-size: 13px;
+                font-size: 14px;
             }
 
             .card-text {
                 overflow: hidden;
+                max-height: 100px;
+                font-size: 12px;
             }
         }
     }
 
+    @media screen and (min-width: 576px) {
+        .news-card {
+            width: calc(100% / 3 - 20px);
+        }   
+    }
 </style>
