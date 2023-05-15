@@ -3,24 +3,64 @@
 export default {
     name: "CardNews",
     props: ["infoNews"],
+    methods: {
+        getImage() {
+            if (this.infoNews.urlToImage) {
+                return this.infoNews.urlToImage
+            } else {
+               return "img/no-image.png" 
+            }
+        },
+
+        getDate(){
+            if (this.infoNews.publishedAt) {
+                let newDate = this.infoNews.publishedAt.split('T');
+                this.infoNews.publishedAt = newDate[0];
+                return this.infoNews.publishedAt
+
+            } else {
+                return 'Data non disponibile'
+            }
+        },
+
+        getAuthor() {
+            if (this.infoNews.author) {
+                return this.infoNews.author
+            } else {
+                return 'Autore non disponibile'
+            }
+        },
+
+        getDescription() {
+            if (this.infoNews.description) {
+                return this.infoNews.description
+            } else {
+                return 'Descrizione non disponibile'
+            }
+        },
+    }
 }
     
 </script>
 
 <template>
     <div class="news-card">
-        <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo">
+        <!-- <img src="img\post_feat_img_23-320x202.jpg" alt="Foto Articolo"> -->
+        <img :src="getImage()" alt="Foto Articolo">
+
 
         <div class="card-body">
             <div class="card-title">
-                {{ infoNews.title }}
+                <a :href="infoNews.url" target="_blank">
+                    {{ infoNews.title }}
+                </a>
             </div>
             <div class="card-subtitle mb-2 text-body-secondary">
-                {{ infoNews.author }}
-                <span class="ms-1">| {{ infoNews.publishedAt }} </span>
+                {{ getAuthor() }}
+                <span class="ms-1">| {{ getDate() }} </span>
             </div>
             <p class="card-text">
-                {{ infoNews.description }}
+                {{ getDescription() }}
             </p>
         </div>
     </div>
@@ -36,6 +76,8 @@ export default {
 
         img {
             width: 100%;
+            aspect-ratio: 2 / 1;
+            object-fit: cover;
         }
 
         .card-body {
