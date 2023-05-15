@@ -292,7 +292,8 @@ import CardForum from './CardForum.vue';
 
     #presentation {
         background-color: $grey-bg; //non ho trovato questo colore nel "color-palette"
-        height: 200px;
+        min-height: 200px;
+        padding: 10px 5px;
         display: flex;
         flex-direction: column;
         align-items: center;

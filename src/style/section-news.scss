@@ -14,10 +14,11 @@
 
 #featured-2 {
     background-image: url("img/featured_article_2_bg.jpg");
-    height: 320px;
+    min-height: 320px;
+    padding-top: 10px;
+    padding-bottom: 15px;
     overflow: hidden;
     margin: 0;
-    // width: 60%;
 }
 
 .featured-article {
