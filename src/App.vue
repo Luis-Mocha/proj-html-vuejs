@@ -16,10 +16,6 @@ export default {
       store
     }
   },
-  created() {
-    console.log(import.meta.env.VITE_PROVA);
-  }
-
 }
 
 </script>
