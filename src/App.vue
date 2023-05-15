@@ -3,6 +3,7 @@ import {store} from './store';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import TopPageBtn from './components/TopPageBtn.vue';
 
 export default {
   name: 'app',
@@ -10,7 +11,8 @@ export default {
     AppHeader,
     AppMain,
     AppFooter,
-  },
+    TopPageBtn,
+},
   data() {
     return {
       store
@@ -27,6 +29,8 @@ export default {
   <AppMain/>
 
   <AppFooter :infoFoot="store.footerList"/>
+
+  <TopPageBtn/>
 
 </template>
 
