@@ -2,6 +2,7 @@
 
     export default {
         name: 'AppFooter',
+        props: ["infoFoot"],
     }
     
 </script>
@@ -9,7 +10,7 @@
 
 <template>
 
-    <h2>AppFooter</h2>
+    <h2>{{ infoFoot[0].title}}</h2>
 
 </template>
 

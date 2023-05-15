@@ -30,7 +30,7 @@ export default {
 
   <AppMain/>
 
-  <AppFooter/>
+  <AppFooter :infoFoot="store.footerList"/>
 
 </template>
 
