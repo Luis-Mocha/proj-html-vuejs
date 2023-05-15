@@ -1,10 +1,13 @@
 <script>
+import axios from 'axios';
+import { store } from '../store'
 
     export default {
         name: 'AppHeader',
         props: ["infoNav"],
         data() {
             return {
+                store,
                 control: false,
             }
         },
@@ -12,14 +15,47 @@
             openInput() {
                 if (this.control === false) {
                     document.getElementById('search-input').classList.add('open')
+                    document.getElementById('search-input').focus()
                     document.querySelector('.search-button').classList.add('open')
                     this.control = true
+
+                } else if (store.searchValue != '') {
+                    document.getElementById('search-input').classList.remove('open')
+                    document.querySelector('.search-button').classList.remove('open')
+
+                    this.searchApi()
+                    this.scrollIdFunction()
+
+                    store.searchValue = '';
+                    this.control= false
                 } else {
                     document.getElementById('search-input').classList.remove('open')
                     document.querySelector('.search-button').classList.remove('open')
                     this.control= false
                 }
-            }
+            },
+
+            searchApi() {
+                if (store.searchValue != '') {
+                    axios.get(`https://newsapi.org/v2/everything?q=${store.searchValue}&pageSize=20&language=it&apiKey=${import.meta.env.VITE_API_KEY}`)
+                    .then( (res) => {
+                    console.log(res.data)
+
+                    store.newsArray = res.data.articles;
+                    })
+                }                
+            },
+
+            //Funzione per scorrere la pagina fino alla sezione news
+            scrollIdFunction() {
+                console.log('provaaaaa');
+                
+                const elemento = document.getElementById('news-section');
+                elemento.scrollIntoView({ 
+                    behavior: 'smooth'
+                });
+            },
+            
         }
     }
 
@@ -50,7 +86,7 @@
                     </div>
 
                     <div class="header-input d-flex" role="search">
-                        <input id="search-input" type="search" placeholder="Search.." aria-label="Search">
+                        <input id="search-input" type="search" placeholder="Cerca un articolo" aria-label="Search" v-model="store.searchValue" @keyup.enter="openInput()">
                         <button class="search-button" @click="openInput()">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
