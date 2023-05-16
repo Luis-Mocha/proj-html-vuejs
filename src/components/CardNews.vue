@@ -47,20 +47,21 @@ export default {
     <div class="news-card">
         <a :href="infoNews.url" target="_blank">
             <img :src="getImage()" alt="Foto Articolo">
-        </a>
+        
 
-        <div class="card-body">
-            <div class="card-title">
-                {{ infoNews.title }}
+            <div class="card-body">
+                <div class="card-title">
+                    {{ infoNews.title }}
+                </div>
+                <div class="card-subtitle mb-2 text-body-secondary">
+                    {{ getSource() }}
+                    <span class="ms-1">| {{ getDate() }} </span>
+                </div>
+                <p class="card-text">
+                    {{ getDescription() }}
+                </p>
             </div>
-            <div class="card-subtitle mb-2 text-body-secondary">
-                {{ getSource() }}
-                <span class="ms-1">| {{ getDate() }} </span>
-            </div>
-            <p class="card-text">
-                {{ getDescription() }}
-            </p>
-        </div>
+        </a>
     </div>
 
 </template>
@@ -72,6 +73,9 @@ export default {
     .news-card {
         width: calc(100% / 1 - 50px);
         margin-bottom: 10px;
+        border-style: solid;
+        border-width: 1px 0;
+        border-color: transparent;
 
         img {
             width: 100%;
@@ -92,10 +96,17 @@ export default {
             }
 
             .card-text {
-                overflow: hidden;
+                overflow: auto;
                 max-height: 100px;
                 font-size: 12px;
             }
+        }
+
+        &:hover {
+            border-style: solid;
+            border-width: 1px 0;
+            border-color: lightgray;
+            background-color: rgb(246, 246, 246);
         }
     }
 
