@@ -7,19 +7,19 @@
                 document.documentElement.scrollTop = 0;
             },
 
-            aggiungiClasse() {
-                const elementoDaAggiungereClasse = document.getElementById('top-button'); // Elemento a cui aggiungere la classe
+            addShowClass() {
+                const elemToShow = document.getElementById('top-button'); // Elemento a cui aggiungere la classe
                 const distanzaScroll = window.pageYOffset || document.documentElement.scrollTop; // Distanza di scroll
 
                 if (distanzaScroll >= 200) {
-                elementoDaAggiungereClasse.classList.add('show');
+                elemToShow.classList.add('show');
                 } else {
-                elementoDaAggiungereClasse.classList.remove('show');
+                elemToShow.classList.remove('show');
                 }
             },
         },
         mounted() {
-            window.addEventListener('scroll', this.aggiungiClasse);
+            window.addEventListener('scroll', this.addShowClass);
         },
     }
 
