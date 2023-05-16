@@ -131,10 +131,12 @@ import { store } from '../store'
                 #search-input {
                     width: 0;
                     border-color: white;
+                    transition: 0.5s;
                 }
                 #search-input.open {
                     width: 130px;
                     padding: 2px 5px;
+                    transition: 0.5s;
                 }
 
                 .search-button {
