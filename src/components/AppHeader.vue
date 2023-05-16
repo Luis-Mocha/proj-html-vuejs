@@ -11,6 +11,9 @@ import { store } from '../store'
                 control: false,
             }
         },
+        mounted() {
+            window.addEventListener('resize', this.addTriangle);
+        },
         methods: {
             openInput() {
                 if (this.control === false) {
@@ -49,15 +52,28 @@ import { store } from '../store'
 
             //Funzione per scorrere la pagina fino alla sezione news
             scrollIdFunction() {
-                console.log('provaaaaa');
-                
                 const elemento = document.getElementById('news-section');
                 elemento.scrollIntoView({ 
                     behavior: 'smooth'
                 });
             },
-            
-        }
+
+            // Funzione per far comparire i triangoli alle voci del menu header solo oltre una certa larghezza dello schermo
+            addTriangle() {
+                const minWidth = 768;
+                const elemArray = document.querySelectorAll('.nav-item')
+
+                if (window.innerWidth >= minWidth) {
+                    elemArray.forEach(element => {
+                        element.classList.add('triangle');
+                    });
+                } else {
+                    elemArray.forEach(element => {
+                        element.classList.remove('triangle');
+                    });
+                }
+            },
+        },
     }
 
 </script>
@@ -117,15 +133,32 @@ import { store } from '../store'
         padding: 10px 0;
         .navbar {
             padding: 0;
+// Singoli li con classe nav-item
+            .nav-item {
+                position: relative;
 
-            li {
                 a {
                 color: white;
                 text-transform: capitalize;
                 line-height: 2;
+                
                 }
             }
 
+            .nav-item.triangle {
+                &:hover {
+                    &::after {
+                    content: '\2023';
+                    color: $blue-estern;
+                    position: absolute;
+                    transform: rotate(90deg);
+                    font-size: 70px;
+                    top: 9px;
+                    left: 20%;
+                    }
+                }
+            }
+//Input per la ricerca
             .header-input {
                 margin: 12px 0;
                 #search-input {
@@ -151,7 +184,7 @@ import { store } from '../store'
                     border-left: 0;
                 }
             }
-
+//Bottone per aprire il menu
             .navbar-toggler {
                 color: white;
                 background-color: transparent;
