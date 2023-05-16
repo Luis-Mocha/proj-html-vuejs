@@ -31,13 +31,23 @@ body {
     text-transform: uppercase;
     padding: 8px 15px;
     cursor: pointer;
+    border: 1px solid transparent;
 }
 
 .btn-black {
-    background-color: black;
+    background-color: rgb(23, 22, 22);
+    &:hover {
+        background-color: black;
+        border: 1px solid $salmon;
+    }
 }
 .btn-blue {
-    background-color: $blue-estern ;
+    background-color: $blue-estern;
+    &:hover {
+        border: 1px solid $blue-estern;
+        background-color: $salmon;
+        transition: 0.5s;
+    }
 }
 
 .letter-space-upper{
