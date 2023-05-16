@@ -12,11 +12,16 @@ import CardForum from './CardForum.vue';
         },
         data() {
             return {
-                store
+                store,
+                controlWidth: 'xs',
             }
         },
         created() {
             this.getNewsApi()
+        },
+        mounted() {
+            window.addEventListener('resize', this.checkWidth);
+            window.addEventListener('resize', this.showForumCards);
         },
         methods: {
 
@@ -27,6 +32,42 @@ import CardForum from './CardForum.vue';
 
                 store.newsArray = res.data.articles;
                 })
+            },
+
+            checkWidth() {
+                const smWidth = 576;
+                const mdWidth = 768;
+                const lgWidth = 992;
+
+                if (window.innerWidth >= smWidth && window.innerWidth < mdWidth) {
+                    this.controlWidth = 'sm'
+                } else if (window.innerWidth >= mdWidth && window.innerWidth < lgWidth) {
+                    this.controlWidth = 'md'
+                } else if (window.innerWidth >= lgWidth) {
+                    this.controlWidth = 'lg'
+                } else {
+                    this.controlWidth = 'xs'
+                }
+            },
+
+            showForumCards() {
+                let cardsArray = document.querySelectorAll('.card-forum')
+                // console.log(cardsArray);
+                let lastCards = Array.from(cardsArray).slice(-4);
+                // let lastCards = cardsArray;
+
+                // console.log(lastCards);
+
+                if (this.controlWidth === 'xs') { 
+
+                    lastCards.forEach(element => {
+                        element.classList.add('d-none');
+                    });
+                } else {
+                    lastCards.forEach(element => {
+                        element.classList.remove('d-none');
+                    });
+                }
             },
         }
     }
@@ -215,6 +256,11 @@ import CardForum from './CardForum.vue';
                 <div class="card-forum-container">
                     <CardForum v-for="(elem, index) in store.infoForum" :key="index" :info="elem"/>
                 </div>
+
+                <button id="forum-button" v-if="controlWidth === 'xs'">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <!-- <i class="fa-solid fa-circle-minus" ></i> -->
+                </button>
                 
             </div>
 
@@ -320,6 +366,12 @@ import CardForum from './CardForum.vue';
         justify-content: center;
         gap: 40px;
         padding: 20px 0;
+        }
+
+        //Bottone + / -
+        #forum-button {
+            display: block;
+            margin: auto;
         }
     }
 
