@@ -167,7 +167,7 @@ import { store } from '../store'
                     transition: 0.5s;
                 }
                 #search-input.open {
-                    width: 130px;
+                    width: 150px;
                     padding: 2px 5px;
                     transition: 0.5s;
                 }
@@ -195,4 +195,3 @@ import { store } from '../store'
         } 
     }
 </style>
-
