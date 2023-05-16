@@ -18,7 +18,8 @@ import CardForum from './CardForum.vue';
             }
         },
         created() {
-            this.getNewsApi()
+            this.getNewsApi(),
+            this.checkWidth()
         },
         mounted() {
             window.addEventListener('resize', this.checkWidth);
@@ -40,14 +41,14 @@ import CardForum from './CardForum.vue';
                 const mdWidth = 768;
                 const lgWidth = 992;
 
-                if (window.innerWidth >= smWidth && window.innerWidth < mdWidth) {
+                if (window.innerWidth < smWidth) {
+                    this.controlWidth = 'xs'
+                } else if (window.innerWidth >= smWidth && window.innerWidth < mdWidth) {
                     this.controlWidth = 'sm'
                 } else if (window.innerWidth >= mdWidth && window.innerWidth < lgWidth) {
                     this.controlWidth = 'md'
                 } else if (window.innerWidth >= lgWidth) {
                     this.controlWidth = 'lg'
-                } else {
-                    this.controlWidth = 'xs'
                 }
             },
 
@@ -87,7 +88,6 @@ import CardForum from './CardForum.vue';
                     document.getElementById('forum-button-icon').classList.remove('fa-minus')
                     document.getElementById('forum-button-icon').classList.add('fa-plus')
                     this.scrollIdFunction('forum-section')
-
 
                     this.controlOpening = false;
                 }
