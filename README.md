@@ -1,32 +1,31 @@
-# Template Vue 3 + Vite
+# PROGETTO PERSONALE
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Riproduco un layout proposto utilizzando:
+- **HTML**
+- **CSS / Scss**
+- **VueJs / Vite**
+---
+### Versione Mobile
+Implemento una versione Mobile del layout proposto cambiando:
+- visualizzazione della *Navbar (Header)*
+- numero di elementi visualizzati nella *sezione forum* (aggiunto anche un bottone per visualizzare tutti gli elementi se desiderato)
+- disposizione generale di elementi nella *sezione news* e *footer*
+---
+### API
+Implemento l'utilizzo di una APi per ottenere e visualizzare le informazioni di articoli reali nella *Sezione News*.
+Informazioni API:
+- [Sito Web](https://newsapi.org)
+- [Documentazione](https://newsapi.org/docs)
+- Tipo di iscrizione al servizio: "*Developer*".
+Rischieste possibili al giorno: **100**.
+
+Per mantenere private infromazioni quali *API key* personali utilizzo file di tipo *.env*. (Installato `"dotenv": "^16.0.3"`).
+Per utilizzare e fare richieste all'api è stato installato `"axios": "^1.4.0"`.
 
 ---
+**Informazioni aggiuntive**
 
-- package.json:
-`
-{
-  "name": "template",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+Font utilizzato: `'Fira Sans'`. Per il suo utilizzo è stao installato `"@fontsource/fira-sans": "^4.5.10"`.
 
-  "dependencies": {
-    "axios": "^1.4.0",
-    "bootstrap": "^5.3.0-alpha3",
-    "vue": "^3.2.47"
-  },
-  
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.1.0",
-    "sass": "^1.62.1",
-    "vite": "^4.3.2"
-  }
-}
-`
+Icone e simboli sono aggiunti con *FontAwesome*, tramite link incorporato in *Index.html > Head*: 
+`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />`.
