@@ -14,6 +14,7 @@ import CardForum from './CardForum.vue';
             return {
                 store,
                 controlWidth: 'xs',
+                controlOpening: false,
             }
         },
         created() {
@@ -50,12 +51,11 @@ import CardForum from './CardForum.vue';
                 }
             },
 
+            //funzione funzione per mostrare/nascondere forum-cards in base allla larghezza dello schermo
             showForumCards() {
                 let cardsArray = document.querySelectorAll('.card-forum')
                 // console.log(cardsArray);
                 let lastCards = Array.from(cardsArray).slice(-4);
-                // let lastCards = cardsArray;
-
                 // console.log(lastCards);
 
                 if (this.controlWidth === 'xs') { 
@@ -68,6 +68,37 @@ import CardForum from './CardForum.vue';
                         element.classList.remove('d-none');
                     });
                 }
+            },
+
+            //funzione per mostrare/nascondere forum-cards al click del tasto. Cambia anche l'icona del tasto
+            showButtonFunction() {
+                let cardsArray = document.querySelectorAll('.card-forum')
+                let lastCards = Array.from(cardsArray).slice(-4);
+
+                lastCards.forEach(element => {
+                    element.classList.toggle('d-none')
+                });
+
+                if (this.controlOpening === false) {
+                    document.getElementById('forum-button-icon').classList.remove('fa-plus')
+                    document.getElementById('forum-button-icon').classList.add('fa-minus')
+                    this.controlOpening = true
+                } else {
+                    document.getElementById('forum-button-icon').classList.remove('fa-minus')
+                    document.getElementById('forum-button-icon').classList.add('fa-plus')
+                    this.scrollIdFunction('forum-section')
+
+
+                    this.controlOpening = false;
+                }
+            },
+
+            //funzione per scollare fino ad un elemento con un determinato ID
+            scrollIdFunction(x) {
+                const elemento = document.getElementById(x);
+                elemento.scrollIntoView({ 
+                    behavior: 'smooth'
+                });
             },
         }
     }
@@ -257,9 +288,8 @@ import CardForum from './CardForum.vue';
                     <CardForum v-for="(elem, index) in store.infoForum" :key="index" :info="elem"/>
                 </div>
 
-                <button id="forum-button" v-if="controlWidth === 'xs'">
-                    <i class="fa-solid fa-circle-plus"></i>
-                    <!-- <i class="fa-solid fa-circle-minus" ></i> -->
+                <button id="forum-button" v-if="controlWidth === 'xs'" @click="showButtonFunction()">
+                    <i id="forum-button-icon" class="fa-solid fa-plus"></i>
                 </button>
                 
             </div>
@@ -372,6 +402,10 @@ import CardForum from './CardForum.vue';
         #forum-button {
             display: block;
             margin: auto;
+            padding: 0 25px;
+            font-size: 25px;
+            color: $salmon;
+            background-color: $blue-estern;
         }
     }
 
