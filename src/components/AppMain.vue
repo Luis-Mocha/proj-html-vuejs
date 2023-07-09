@@ -217,7 +217,7 @@ import CardForum from './CardForum.vue';
 
                         <!-- tutorial 1 -->
                         <div class="tutorial-card">
-                            <img src="img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
+                            <img src="/img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
 
                             <div class="tutorial-card-body">
                                 <div>
@@ -230,7 +230,7 @@ import CardForum from './CardForum.vue';
                         </div>
                         <!-- tutorial 2 -->
                         <div class="tutorial-card">
-                            <img src="img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
+                            <img src="/img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
 
                             <div class="tutorial-card-body">
                                 <div>
@@ -243,7 +243,7 @@ import CardForum from './CardForum.vue';
                         </div>
                         <!-- tutorial 3 -->
                         <div class="tutorial-card">
-                            <img src="img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
+                            <img src="/img/post_feat_img_23-147x118.jpg" alt="Foto Tutorial">
 
                             <div class="tutorial-card-body">
                                 <div>
@@ -349,7 +349,7 @@ import CardForum from './CardForum.vue';
 
     #jumbo {
         color: white;
-        background-image: url("img/home_slider_bg.jpg");
+        background-image: url("/img/home_slider_bg.jpg");
         background-size: cover;
 
         .container {
@@ -413,7 +413,7 @@ import CardForum from './CardForum.vue';
         padding: 0;
         #jumbo-community {
             height: 400px;
-            background-image: url(img/join_now_cta_bg.jpg);
+            background-image: url(/img/join_now_cta_bg.jpg);
             background-size: cover;
             background-position: center;
 
