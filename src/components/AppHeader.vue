@@ -12,6 +12,7 @@ import { store } from '../store'
             }
         },
         mounted() {
+            this.addTriangle();
             window.addEventListener('resize', this.addTriangle);
         },
         methods: {
