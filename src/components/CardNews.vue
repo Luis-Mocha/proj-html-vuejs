@@ -8,7 +8,7 @@ export default {
             if (this.infoNews.urlToImage) {
                 return this.infoNews.urlToImage
             } else {
-               return "img/no-image.png" 
+               return "/img/no-image.png" 
             }
         },
 
